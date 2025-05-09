@@ -1,0 +1,47 @@
+// Header.tsx
+import React from 'react';
+
+const Header: React.FC = () => {
+    return (
+        <header>
+            <h1>Student Portal</h1>
+        </header>
+    );
+};
+
+export default Header;
+
+// Footer.tsx
+import React from 'react';
+
+const Footer: React.FC = () => {
+    return (
+        <footer>
+            <p>&copy; {new Date().getFullYear()} Student Portal. All rights reserved.</p>
+        </footer>
+    );
+};
+
+export default Footer;
+
+// NavigationMenu.tsx
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+const NavigationMenu: React.FC = () => {
+    return (
+        <nav>
+            <ul>
+                <li><Link to="/chatbot">Chatbot</Link></li>
+                <li><Link to="/bursary-info">Bursary Info</Link></li>
+                <li><Link to="/campus-navigation">Campus Navigation</Link></li>
+                <li><Link to="/food-ordering">Food Ordering</Link></li>
+                <li><Link to="/special-cases">Special Cases</Link></li>
+                <li><Link to="/module-selection">Module Selection</Link></li>
+                <li><Link to="/course-registration">Course Registration</Link></li>
+            </ul>
+        </nav>
+    );
+};
+
+export default NavigationMenu;
