@@ -1,7 +1,13 @@
 .header {
-    background-color: white;
+    background: linear-gradient(135deg, #003366 0%, #004080 100%);
     padding: 1rem 0;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .header-content {
@@ -20,12 +26,12 @@
 
 .logo h1 {
     margin: 0;
-    color: #2c3e50;
+    color: #e4f3ff;
     font-size: 1.8rem;
 }
 
 .tagline {
-    color: #7f8c8d;
+    color: #addbdf;
     font-size: 0.9rem;
 }
 
@@ -36,7 +42,7 @@
 }
 
 .welcome-text {
-    color: #2c3e50;
+    color: #bed7f0;
 }
 
 .login-button {

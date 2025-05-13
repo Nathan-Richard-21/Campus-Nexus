@@ -11,7 +11,10 @@ const Header: React.FC = () => {
                 </div>
                 <div className="user-section">
                     <span className="welcome-text">Welcome, Student</span>
-                    <button className="login-button">Login</button>
+                    <button className="login-button">
+                        <i className="fas fa-user"></i>
+                        Login
+                    </button>
                 </div>
             </div>
         </header>
