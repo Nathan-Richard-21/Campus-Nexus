@@ -15,10 +15,4 @@
 | **Messaging Integration** | - WhatsApp API integration for business-user communication.<br>- Notifications.      |  
 | **Admin Dashboard**     | - Approve/reject business verifications.<br>- Generate usage reports.                |  
 
-## Interactions  
-```mermaid
-graph TD  
-  A[User Management] --> B[Business Listings]  
-  B --> C[Search & Filtering]  
-  C --> D[Messaging Integration]  
-  A --> E[Admin Dashboard]  
+
