@@ -1,0 +1,272 @@
+/* DepartmentInfo.css */
+.department-info {
+    width: 100%;
+}
+
+.section-navigation {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.section-navigation button {
+    padding: 10px 20px;
+    background-color: #f5f7ff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.section-navigation button:hover {
+    background-color: #e7ebfc;
+    transform: translateY(-2px);
+}
+
+.section-navigation button.active {
+    background-color: #4364F7;
+    color: white;
+}
+
+.section-content {
+    min-height: 400px;
+}
+
+.animate-in {
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Overview Section */
+.department-image {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.department-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.department-image:hover img {
+    transform: scale(1.05);
+}
+
+.section-overview h2 {
+    margin-bottom: 20px;
+    color: #333;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.section-overview h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: #4364F7;
+}
+
+.section-overview p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    gap: 20px;
+}
+
+.stat-card {
+    flex: 1;
+    min-width: 150px;
+    background-color: #f8f9ff;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card h3 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #4364F7;
+    margin-bottom: 5px;
+}
+
+.stat-card p {
+    color: #777;
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Vision & Mission Section */
+.vision-card,
+.mission-card {
+    background-color: #f8f9ff;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 30px;
+    display: flex;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.vision-card:hover,
+.mission-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.vision-card .icon,
+.mission-card .icon {
+    flex: 0 0 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #4364F7, #6FB1FC);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 25px;
+}
+
+.vision-card .icon i,
+.mission-card .icon i {
+    color: white;
+    font-size: 2rem;
+}
+
+.vision-card .content,
+.mission-card .content {
+    flex: 1;
+}
+
+.vision-card h3,
+.mission-card h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.vision-card p,
+.mission-card p {
+    margin-bottom: 0;
+    line-height: 1.6;
+    color: #555;
+}
+
+.mission-card ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.mission-card li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Values Section */
+.values-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.value-card {
+    background-color: #f8f9ff;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.value-icon {
+    height: 60px;
+    width: 60px;
+    background: linear-gradient(135deg, #4364F7, #6FB1FC);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.value-icon i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.value-card h3 {
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.value-card p {
+    color: #555;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .stats-container {
+        gap: 15px;
+    }
+
+    .stat-card {
+        min-width: 120px;
+    }
+
+    .vision-card,
+    .mission-card {
+        flex-direction: column;
+    }
+
+    .vision-card .icon,
+    .mission-card .icon {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    
+    .values-container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}

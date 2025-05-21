@@ -1,44 +1,564 @@
-.student-portal-app/src/components/CourseRegistration/CourseRegistration.css
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
+/* CourseRegistration.css */
 .course-registration {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 0.8s ease;
+}
+
+.course-registration.loaded {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.registration-header {
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.registration-header h1 {
+    margin: 0;
+    color: #333;
+    font-size: 2rem;
+    background: linear-gradient(135deg, #4364F7, #6FB1FC);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textShimmer 3s infinite linear;
+}
+
+@keyframes textShimmer {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.registration-header p {
+    margin: 5px 0 0 0;
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.help-button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #4364F7;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.help-button:hover {
+    transform: scale(1.1);
+}
+
+/* Progress tracker */
+.registration-progress {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.registration-progress::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #e0e0e0;
+    z-index: 1;
+}
+
+.progress-step {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+    position: relative;
+    z-index: 2;
 }
 
-.course-registration h2 {
-    margin-bottom: 20px;
-}
-
-.course-registration form {
-    width: 100%;
-    max-width: 400px;
-}
-
-.course-registration label {
+.step-number {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f0f4ff;
+    border: 2px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #777;
     margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+.progress-step.active .step-number {
+    background-color: #4364F7;
+    border-color: #4364F7;
+    color: white;
+    box-shadow: 0 0 0 5px rgba(67, 100, 247, 0.2);
+    animation: pulse 1.5s infinite;
+}
+
+.progress-step.completed .step-number {
+    background-color: #4CAF50;
+    border-color: #4CAF50;
+    color: white;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(67, 100, 247, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 8px rgba(67, 100, 247, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(67, 100, 247, 0);
+    }
+}
+
+.step-label {
+    font-size: 0.85rem;
+    color: #777;
+    text-align: center;
+    max-width: 80px;
+}
+
+.progress-step.active .step-label {
+    color: #4364F7;
+    font-weight: 600;
+}
+
+.progress-step.completed .step-label {
+    color: #4CAF50;
+}
+
+.registration-navigation {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.registration-navigation button {
+    padding: 12px 18px;
+    background-color: #f5f7ff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.registration-navigation button i {
+    margin-right: 8px;
+    font-size: 1rem;
+}
+
+.registration-navigation button:hover {
+    background-color: #e7ebfc;
+    transform: translateY(-3px);
+}
+
+.registration-navigation button.active {
+    background-color: #4364F7;
+    color: white;
+    box-shadow: 0 5px 15px rgba(67, 100, 247, 0.3);
+}
+
+.registration-content {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+    min-height: 500px;
+    transition: all 0.3s ease;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Tab navigation within content */
+.tab-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.tab-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.prev-tab-btn, .next-tab-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.prev-tab-btn {
+    background-color: #f0f4ff;
+    color: #4364F7;
+}
+
+.next-tab-btn {
+    background-color: #4364F7;
+    color: white;
+}
+
+.prev-tab-btn:hover, .next-tab-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.prev-tab-btn:hover {
+    background-color: #e0e8ff;
+}
+
+.next-tab-btn:hover {
+    background-color: #3550d8;
+}
+
+.prev-tab-btn i {
+    margin-right: 8px;
+}
+
+.next-tab-btn i {
+    margin-left: 8px;
+}
+
+/* Module selection guidance */
+.module-selection-guidance {
+    background-color: #e0e8ff;
+    border-left: 5px solid #4364F7;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    animation: slideInFromTop 0.5s ease;
+}
+
+@keyframes slideInFromTop {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.guidance-icon {
+    font-size: 2.5rem;
+    color: #4364F7;
+    margin-right: 20px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.guidance-content {
+    flex: 1;
+}
+
+.guidance-content h3 {
+    margin: 0 0 10px 0;
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.guidance-content p {
+    margin: 0 0 15px 0;
+    line-height: 1.5;
+}
+
+.guidance-tips {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.guidance-tips li {
+    padding: 8px 0;
+    position: relative;
+    padding-left: 25px;
+}
+
+.guidance-tips li:before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #4364F7;
     font-weight: bold;
 }
 
-.course-registration input,
-.course-registration select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+.proceed-to-registration {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px dashed #a0b0e0;
 }
 
-.course-registration button {
-    padding: 10px 15px;
-    background-color: #007bff;
+.registration-link-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 25px;
+    background-color: #4364F7;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+.registration-link-button:hover {
+    background-color: #3550d8;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(67, 100, 247, 0.3);
+    text-decoration: none;
+    color: white;
+}
+
+.registration-link-button i {
+    margin-right: 8px;
+}
+
+/* Make Next tab button look the same whether it's a Link or button */
+a.next-tab-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    background-color: #4364F7;
+    color: white;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+a.next-tab-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background-color: #3550d8;
+    text-decoration: none;
+    color: white;
+}
+
+a.next-tab-btn i {
+    margin-left: 8px;
+}
+
+/* Help modal */
+.registration-help-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+}
+
+.registration-help-modal {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    animation: scaleIn 0.4s ease;
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.close-help {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: #777;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.close-help:hover {
+    color: #4364F7;
+}
+
+.help-content {
+    padding: 30px;
+}
+
+.help-content h3 {
+    margin: 0 0 20px 0;
+    color: #333;
+    text-align: center;
+    font-size: 1.4rem;
+}
+
+.help-step {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.help-icon {
+    flex: 0 0 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #4364F7, #6FB1FC);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    color: white;
+    font-size: 1.5rem;
+    animation: floatIcon 3s infinite ease-in-out;
+}
+
+@keyframes floatIcon {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.help-step h4 {
+    margin: 0 0 10px 0;
+    color: #4364F7;
+    font-size: 1.1rem;
+}
+
+.help-step p {
+    margin: 0;
+    line-height: 1.6;
+    color: #555;
+}
+
+.help-navigation {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.help-next-btn {
+    padding: 12px 30px;
+    background-color: #4364F7;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 30px;
+    font-weight: 500;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.course-registration button:hover {
-    background-color: #0056b3;
+.help-next-btn:hover {
+    background-color: #3550d8;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(67, 100, 247, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .registration-progress {
+        display: none;
+    }
+    
+    .registration-navigation {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 10px;
+    }
+    
+    .registration-navigation button {
+        white-space: nowrap;
+    }
+    
+    .module-selection-guidance {
+        flex-direction: column;
+    }
+    
+    .guidance-icon {
+        margin-bottom: 15px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .registration-header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .registration-content {
+        padding: 20px;
+    }
+    
+    .help-step {
+        flex-direction: column;
+    }
+    
+    .help-icon {
+        margin: 0 auto 15px;
+    }
+    
+    .tab-navigation {
+        flex-direction: column;
+        gap: 15px;
+    }
 }

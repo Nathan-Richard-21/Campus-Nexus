@@ -21,14 +21,12 @@ const NavigationMenu: React.FC = () => {
                 <li>
                     <Link to="/food-ordering"><i className="fas fa-utensils"></i>Food Ordering</Link>
                 </li>
+               
                 <li>
-                    <Link to="/special-cases"><i className="fas fa-exclamation-circle"></i>Special Cases</Link>
+                    <Link to="/module-selection"><i className="fas fa-tasks"></i>Details Change</Link>
                 </li>
                 <li>
-                    <Link to="/module-selection"><i className="fas fa-tasks"></i>Module Selection</Link>
-                </li>
-                <li>
-                    <Link to="/course-registration"><i className="fas fa-user-graduate"></i>Course Registration</Link>
+                    <Link to="/course-registration"><i className="fas fa-user-graduate"></i>Course information</Link>
                 </li>
             </ul>
         </nav>
