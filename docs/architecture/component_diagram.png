@@ -1,19 +1,19 @@
-graph TD  
-  subgraph Frontend  
-    A[React Web App]  
-  end  
-
-  subgraph Backend  
-    B[Django API]  
-    C[Business Logic]  
-  end  
-
-  subgraph External Services  
-    D[WhatsApp API]  
-    E[PostgreSQL]  
-  end  
-
-  A -->|HTTP Requests| B  
-  B -->|CRUD Operations| E  
-  B -->|Send Messages| D  
-  C --> B  
+            +------------------------+
+            |  <<Component>>         |
+            |  Frontend - React App  |
+            +------------------------+
+                     |
+                     v
+            +------------------------+
+            |  <<Component>>         |
+            |  Backend API - Django  |
+            +------------------------+
+                     ^     ^     |
+                     |     |     |
+     +----------------+     |     +-------------------------------+
+     |                      |                                     |
+     v                      v                                     v
++------------------+  +------------------+           +-----------------------------+
+| <<Component>>    |  | <<Component>>    |           | <<Component>>               |
+| Admin Dashboard  |  | PostgreSQL DB    |           | WhatsApp Messaging Service  |
++------------------+  +------------------+           +-----------------------------+
