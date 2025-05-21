@@ -12,39 +12,39 @@
 ## Justification  
 
 ### Backend: Django (Python)  
-✅ **Why?**  
+ **Why?**  
 - **Batteries-included**: Built-in admin panel, ORM, and auth.  
 - **Security**: CSRF protection, SQL injection safeguards.  
 - **Scalability**: Handles high traffic with async support (Django Channels).  
 
-⚠️ **Trade-offs**:  
+ **Trade-offs**:  
 - Less microservices-friendly than Node.js/Go.  
 
 ### Frontend: React.js  
-✅ **Why?**  
+ **Why?**  
 - **Component Reusability**: Faster UI development.  
 - **Ecosystem**: Rich libraries (e.g., Material-UI for pre-built components).  
 - **Performance**: Virtual DOM minimizes re-renders.  
 
-⚠️ **Trade-offs**:  
+ **Trade-offs**:  
 - Steeper learning curve vs. Vue.js.  
 
 ### Database: PostgreSQL  
-✅ **Why?**  
+ **Why?**  
 - **ACID Compliance**: Critical for financial/transactional data.  
 - **Scalability**: Vertical scaling suits phased rollouts.  
 - **GIS Support**: Native geolocation queries for business searches.  
 
-⚠️ **Trade-offs**:  
+ **Trade-offs**:  
 - Higher cost vs. SQLite for small-scale prototypes.  
 
 ### Hosting: AWS  
-✅ **Why?**  
+ **Why?**  
 - **Global Reach**: Multi-region deployment.  
 - **Services**: S3 for static files, RDS for managed PostgreSQL.  
 - **Cost Control**: Pay-as-you-go pricing.  
 
-⚠️ **Trade-offs**:  
+ **Trade-offs**:  
 - Complexity vs. Heroku (but more flexible long-term).  
 
 ## Alternatives Considered  
