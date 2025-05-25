@@ -1,60 +1,131 @@
 .header {
-    background: linear-gradient(135deg, #003366 0%, #004080 100%);
-    padding: 1rem 0;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    animation: fadeIn 0.5s ease-in-out;
+  background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 64px;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.3rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-right: 1rem;
 }
 
-.header-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
-.logo {
-    display: flex;
-    flex-direction: column;
+.logo-text {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.logo h1 {
-    margin: 0;
-    color: #e4f3ff;
-    font-size: 1.8rem;
+.logo-text span.campus {
+  color: #ffeb3b;
 }
 
-.tagline {
-    color: #addbdf;
-    font-size: 0.9rem;
+.logo-text span.nexus {
+  color: #fff;
 }
 
-.user-section {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+.header-title {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-left: 1rem;
+  padding-left: 1rem;
+  border-left: 2px solid rgba(255, 255, 255, 0.3);
 }
 
-.welcome-text {
-    color: #bed7f0;
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.notification-icon {
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.notification-icon:hover {
+  color: #ffeb3b;
 }
 
 .login-button {
-    background-color: #3498db;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 .login-button:hover {
-    background-color: #2980b9;
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.login-button .icon {
+  font-size: 1.1rem;
+}
+
+@media (max-width: 992px) {
+  .menu-toggle {
+    display: block;
+  }
+  
+  .header-title {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 0.8rem 1rem;
+  }
+  
+  .logo-text {
+    font-size: 1.4rem;
+  }
+  
+  .login-button span {
+    display: none;
+  }
+  
+  .login-button {
+    padding: 0.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-text {
+    font-size: 1.2rem;
+  }
 }

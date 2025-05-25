@@ -1,46 +1,340 @@
-.bursary-info {
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.bursary-container {
+    padding: 30px;
+    font-family: 'Poppins', sans-serif;
+    color: #2d3748;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.bursary-info h2 {
-    color: #333;
-    font-size: 24px;
+.bursary-header {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.bursary-header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 16px;
+    position: relative;
+    display: inline-block;
+}
+
+.bursary-header h1::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #805ad5, #4299e1);
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.bursary-header p {
+    font-size: 18px;
+    color: #718096;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.bursary-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f8fafc;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.filter-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+.filter-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #4a5568;
+}
+
+.filter-group select, 
+.filter-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background-color: white;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.filter-group select:focus, 
+.filter-group input:focus {
+    border-color: #805ad5;
+    box-shadow: 0 0 0 3px rgba(128, 90, 213, 0.2);
+    outline: none;
+}
+
+.bursary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.bursary-card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.bursary-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.bursary-logo {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f7fafc;
+    border-bottom: 1px solid #edf2f7;
+}
+
+.bursary-icon {
+    font-size: 3.5rem;
+    color: #805ad5;
+    background-color: rgba(128, 90, 213, 0.1);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.bursary-content {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.bursary-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #2d3748;
+}
+
+.bursary-university {
+    font-size: 16px;
+    color: #4a5568;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.bursary-description {
+    color: #718096;
+    margin-bottom: 20px;
+    flex-grow: 1;
+    line-height: 1.6;
+}
+
+.bursary-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.detail-tag {
+    background-color: #edf2f7;
+    color: #4a5568;
+    font-size: 14px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.apply-button {
+    display: block;
+    width: 100%;
+    padding: 14px 20px;
+    background: linear-gradient(90deg, #805ad5, #6b46c1);
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    margin-top: auto;
+}
+
+.apply-button:hover {
+    background: linear-gradient(90deg, #6b46c1, #553c9a);
+    transform: scale(1.02);
+}
+
+.deadline {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 15px;
+    color: #e53e3e;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.deadline-soon {
+    color: #e53e3e;
+}
+
+.deadline-medium {
+    color: #dd6b20;
+}
+
+.deadline-far {
+    color: #38a169;
+}
+
+.bursary-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #4299e1;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 20px;
+    z-index: 1;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.bursary-card {
+    animation: fadeIn 0.6s ease forwards;
+}
+
+.bursary-card:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.bursary-card:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.bursary-card:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+.bursary-card:nth-child(5) {
+    animation-delay: 0.4s;
+}
+
+.bursary-card:nth-child(n+6) {
+    animation-delay: 0.5s;
+}
+
+/* Animation for filter changes */
+@keyframes filterTransition {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.filter-transition {
+    animation: filterTransition 0.4s ease forwards;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+    .bursary-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .bursary-container {
+        padding: 20px;
+    }
+    
+    .bursary-header h1 {
+        font-size: 28px;
+    }
+    
+    .bursary-filters {
+        flex-direction: column;
+    }
+    
+    .filter-group {
+        width: 100%;
+        min-width: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .bursary-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .bursary-header h1 {
+        font-size: 24px;
+    }
+}
+
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #f8fafc;
+    border-radius: 12px;
+    margin-top: 40px;
+}
+
+.empty-state h3 {
+    font-size: 22px;
+    color: #4a5568;
     margin-bottom: 15px;
 }
 
-.bursary-info p {
-    color: #555;
-    font-size: 16px;
-    line-height: 1.5;
-}
-
-.bursary-info .bursary-list {
-    list-style-type: none;
-    padding: 0;
-}
-
-.bursary-info .bursary-list li {
-    margin: 10px 0;
-    padding: 10px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-.bursary-info .apply-button {
-    display: inline-block;
-    padding: 10px 15px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    text-decoration: none;
-    font-size: 16px;
-}
-
-.bursary-info .apply-button:hover {
-    background-color: #0056b3;
+.empty-state p {
+    color: #718096;
+    margin-bottom: 30px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
 }

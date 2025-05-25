@@ -1,0 +1,766 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.home-wrapper {
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
+
+/* Modern Hero Section */
+.modern-hero {
+  position: relative;
+  height: 85vh;
+  max-height: 800px;
+  min-height: 600px;
+  background: linear-gradient(135deg, #003366 0%, #0056b3 100%);
+  color: white;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4rem;
+  border-radius: 0 0 30px 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://via.placeholder.com/1920x1080?text=WSU+Campus');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.2;
+  animation: zoomEffect 20s infinite alternate ease-in-out;
+}
+
+@keyframes zoomEffect {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  width: 90%;
+  text-align: center;
+  padding: 0 2rem;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(to right, #ffffff, #e0f7fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeInUp 1s ease-out;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  font-weight: 300;
+  opacity: 0.9;
+  margin-bottom: 2.5rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  animation: fadeInUp 1s ease-out 0.2s backwards;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeInUp 1s ease-out 0.4s backwards;
+}
+
+.btn-hero-primary, .btn-hero-secondary {
+  padding: 0.9rem 2.2rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn-hero-primary {
+  background: linear-gradient(45deg, #00bcd4, #2196f3);
+  border: none;
+  color: white;
+}
+
+.btn-hero-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
+.btn-hero-primary:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(45deg, #2196f3, #00bcd4);
+}
+
+.btn-hero-secondary:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.scroll-down {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 1.2rem;
+  opacity: 0.7;
+  cursor: pointer;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+  40% { transform: translateY(-20px) translateX(-50%); }
+  60% { transform: translateY(-10px) translateX(-50%); }
+}
+
+/* Services Section */
+.services-section {
+  padding: 6rem 2rem;
+  background-color: #f8f9fa;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 4rem;
+  border-radius: 20px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.03);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  color: #003366;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(45deg, #00bcd4, #2196f3);
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.section-description {
+  color: #546e7a;
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 1.5rem auto 0;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.service-card:hover {
+  transform: translateY(-16px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e6f1f8 100%);
+  font-size: 3rem;
+  color: #003366;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+  color: #00bcd4;
+  transform: scale(1.1);
+}
+
+.service-content {
+  padding: 1.8rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-title {
+  color: #003366;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.service-description {
+  color: #546e7a;
+  font-size: 1rem;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+.service-link {
+  margin-top: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  color: #00bcd4;
+  font-weight: 500;
+  text-decoration: none;
+  gap: 0.5rem;
+  transition: gap 0.3s ease;
+}
+
+.service-link:hover {
+  gap: 0.8rem;
+}
+
+/* Campus News & Events */
+.news-section {
+  padding: 6rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto 4rem;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+}
+
+.news-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.news-image {
+  height: 200px;
+  background-color: #e0e0e0;
+  position: relative;
+  overflow: hidden;
+}
+
+.news-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.news-card:hover .news-image img {
+  transform: scale(1.1);
+}
+
+.news-date {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: linear-gradient(45deg, #00bcd4, #2196f3);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  z-index: 1;
+}
+
+.news-content {
+  padding: 1.8rem;
+}
+
+.news-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #003366;
+  margin-bottom: 1rem;
+}
+
+.news-excerpt {
+  color: #546e7a;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.news-link {
+  display: inline-flex;
+  align-items: center;
+  color: #00bcd4;
+  font-weight: 500;
+  text-decoration: none;
+  gap: 0.5rem;
+  transition: gap 0.3s ease;
+}
+
+.news-link:hover {
+  gap: 0.8rem;
+}
+
+/* Quick Stats Section */
+.stats-section {
+  background: linear-gradient(135deg, #003366 0%, #004e92 100%);
+  color: white;
+  padding: 5rem 2rem;
+  border-radius: 20px;
+  margin-bottom: 4rem;
+}
+
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-value {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Student Testimonials */
+.testimonials-section {
+  padding: 6rem 2rem;
+  background-color: #f8f9fa;
+  border-radius: 20px;
+  margin-bottom: 4rem;
+}
+
+.testimonials-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.testimonial-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.testimonial-text {
+  font-size: 1.2rem;
+  color: #455a64;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.testimonial-text::before,
+.testimonial-text::after {
+  content: '"';
+  font-size: 3rem;
+  color: #00bcd4;
+  opacity: 0.3;
+  position: absolute;
+}
+
+.testimonial-text::before {
+  top: -20px;
+  left: -10px;
+}
+
+.testimonial-text::after {
+  bottom: -50px;
+  right: -10px;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.author-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #e0e0e0;
+}
+
+.author-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.author-info {
+  text-align: left;
+}
+
+.author-name {
+  font-weight: 600;
+  color: #003366;
+  margin-bottom: 0.3rem;
+}
+
+.author-role {
+  color: #546e7a;
+  font-size: 0.9rem;
+}
+
+/* Campus Map Section */
+.campus-map-section {
+  padding: 6rem 2rem;
+  background-color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.map-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  height: 500px;
+  background-color: #e0e0e0;
+}
+
+.map-placeholder {
+  width: 100%;
+  height: 100%;
+  background-image: url('https://via.placeholder.com/1200x500?text=WSU+Campus+Map');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Academic Calendar Section */
+.calendar-section {
+  padding: 6rem 2rem;
+  position: relative;
+  background-color: #f8f9fa;
+  margin-bottom: 4rem;
+  border-radius: 20px;
+}
+
+.calendar-container {
+  display: flex;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.calendar-col {
+  flex: 1;
+  min-width: 300px;
+}
+
+.calendar-month {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  height: 100%;
+}
+
+.month-header {
+  background: linear-gradient(135deg, #003366 0%, #004e92 100%);
+  color: white;
+  padding: 1rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.calendar-events {
+  padding: 1rem;
+}
+
+.calendar-event {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.calendar-event:last-child {
+  border-bottom: none;
+}
+
+.event-date {
+  background: linear-gradient(45deg, #00bcd4, #2196f3);
+  color: white;
+  min-width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.event-details h4 {
+  margin: 0 0 0.5rem 0;
+  color: #003366;
+  font-size: 1.1rem;
+}
+
+.event-details p {
+  margin: 0;
+  color: #546e7a;
+  font-size: 0.9rem;
+}
+
+/* Call-to-Action Section */
+.cta-section {
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, #00bcd4 0%, #2196f3 100%);
+  color: white;
+  text-align: center;
+  border-radius: 20px;
+  margin: 4rem auto;
+  max-width: 1200px;
+}
+
+.cta-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cta-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.cta-text {
+  font-size: 1.2rem;
+  margin-bottom: 2.5rem;
+  opacity: 0.9;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-cta-primary,
+.btn-cta-secondary {
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  cursor: pointer;
+}
+
+.btn-cta-primary {
+  background: white;
+  color: #003366;
+  border: none;
+}
+
+.btn-cta-secondary {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.btn-cta-primary:hover,
+.btn-cta-secondary:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out backwards;
+}
+
+.delay-1 {
+  animation-delay: 0.2s;
+}
+
+.delay-2 {
+  animation-delay: 0.4s;
+}
+
+.delay-3 {
+  animation-delay: 0.6s;
+}
+
+.delay-4 {
+  animation-delay: 0.8s;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.3rem;
+  }
+  
+  .section-title {
+    font-size: 2.2rem;
+  }
+  
+  .stat-value {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .modern-hero {
+    height: 70vh;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .btn-hero-primary, 
+  .btn-hero-secondary {
+    padding: 0.8rem 1.8rem;
+    font-size: 1rem;
+  }
+  
+  .services-section,
+  .news-section,
+  .testimonials-section,
+  .campus-map-section {
+    padding: 4rem 1.5rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .cta-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .modern-hero {
+    height: 80vh;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .hero-cta {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .btn-hero-primary, 
+  .btn-hero-secondary,
+  .btn-cta-primary,
+  .btn-cta-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .services-grid,
+  .news-grid,
+  .stats-container {
+    gap: 1.5rem;
+  }
+  
+  .service-icon {
+    height: 100px;
+    font-size: 2.5rem;
+  }
+  
+  .service-title {
+    font-size: 1.3rem;
+  }
+  
+  .map-container {
+    height: 350px;
+  }
+}
