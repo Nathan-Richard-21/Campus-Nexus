@@ -1,0 +1,7 @@
+BEGIN TRANSACTION;
+CREATE TABLE IF NOT EXISTS "Users" (
+	"Username"	TEXT,
+	"Emal"	TEXT,
+	"Password"	TEXT
+);
+COMMIT;
