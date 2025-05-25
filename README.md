@@ -1,8 +1,24 @@
-# Getting Started with Create React App
+# Campus Nexus
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Campus Nexus](https://img.shields.io/badge/Campus-Nexus-brightgreen)
+![Status](https://img.shields.io/badge/Status-Active-success)
+![Version](https://img.shields.io/badge/Version-1.0.0-blue)
 
-## Available Scripts
+## 🎓 About Campus Nexus
+
+**Campus Nexus** is a comprehensive campus management solution designed to streamline administrative processes and enhance the student experience. Developed by **Infinity Cybertech**, this platform addresses common challenges faced by students and administrators in campus environments.
+
+## ✨ Key Features
+
+- **AI-Powered Student Chatbot**: Instant access to student information and automated responses to common queries
+- **Bursary Information System**: Easy access to bursary details and application processes
+- **Interactive Campus Navigation**: Building-by-building navigation using coordinates to help new students find their way
+- **Food Ordering System**: Online food ordering with convenient pickup options
+- **Special Cases Management**: Streamlined handling of administrative special cases
+- **Module Selection Platform**: User-friendly interface for browsing and selecting academic modules
+- **Online Course Registration**: Digital course registration and removal system
+
+## 🚀 Getting Started
 
 In the project directory, you can run:
 
@@ -24,47 +40,115 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🏗️ Project Structure
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+campusnexus/
+├── frontend/          # React frontend application
+│   ├── public/        # Static files
+│   ├── src/           # Source code
+│   │   ├── components/
+│   │   │   ├── Auth/            # Authentication components
+│   │   │   ├── BursaryInfo/     # Bursary information system
+│   │   │   ├── CampusNavigation/# Campus navigation feature
+│   │   │   ├── Chatbot/         # AI-powered chatbot
+│   │   │   ├── CourseRegistration/ # Course registration system
+│   │   │   ├── FoodOrdering/    # Food ordering system
+│   │   │   ├── ModuleSelection/ # Module selection platform
+│   │   │   └── SpecialCases/    # Special cases management
+│   │   └── App.tsx
+├── Backend/           # Node.js backend application
+│   ├── db/            # Database files
+│   └── index.js       # Server entry point
+```
 
-### `npm run eject`
+## 🔧 Technologies Used
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Frontend**: React, TypeScript, CSS
+- **Backend**: Node.js, SQLite
+- **Authentication**: JWT authentication
+- **AI**: Natural Language Processing for chatbot
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🧩 Installation
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Clone the repository
+   ```bash
+   git clone https://github.com/yourusername/campus-nexus.git
+   cd campus-nexus
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. Install frontend dependencies
+   ```bash
+   cd frontend
+   npm install
+   ```
 
-## Learn More
+3. Install backend dependencies
+   ```bash
+   cd ../Backend
+   npm install
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🚀 Running the Application
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Start the backend server
+   ```bash
+   cd Backend
+   node index.js
+   ```
 
-### Code Splitting
+2. Start the frontend application
+   ```bash
+   cd frontend
+   npm start
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+3. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-### Analyzing the Bundle Size
+## 💡 Problem Solutions
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Campus Nexus addresses the following common campus problems:
 
-### Making a Progressive Web App
+1. **Student Information Access**
+   - AI-powered chatbot provides instant access to student details
+   - Reduces queues at admin offices
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+2. **Bursary Information**
+   - Centralized system for bursary updates and applications
+   - Automatic notifications about eligibility and deadlines
 
-### Advanced Configuration
+3. **Campus Navigation**
+   - Interactive map with building-by-building navigation
+   - Location-based services for new students
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+4. **Food Ordering**
+   - Online food ordering system
+   - Convenient pickup options at designated locations
 
-### Deployment
+5. **Administrative Efficiency**
+   - Streamlined handling of special cases
+   - Reduced paperwork and manual processes
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+6. **Module Selection**
+   - Digital yearbook with easy module browsing
+   - Personalized module recommendations
 
-### `npm run build` fails to minify
+7. **Course Registration**
+   - Paperless course registration and removal
+   - Real-time updates to student records
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📝 License
+
+This project is proprietary software. All rights reserved.
+
+## 👨‍💻 Developed By
+
+**Infinity Cybertech** - *Building tomorrow's campus solutions today*
+
+---
+
+© 2025 Campus Nexus. All rights reserved.
