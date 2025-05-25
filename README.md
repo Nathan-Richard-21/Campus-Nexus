@@ -1,6 +1,6 @@
 # Campus Nexus
-Documentation in the main branch
-Code files are in the master branch
+Documentation in the main branch.
+Code files are in the master branch.
 
 ![Campus Nexus](https://img.shields.io/badge/Campus-Nexus-brightgreen)
 ![Status](https://img.shields.io/badge/Status-Active-success)
