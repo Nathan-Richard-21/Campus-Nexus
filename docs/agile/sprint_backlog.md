@@ -4,7 +4,7 @@
 | Task                          | Assigned To      | Est. Time | Status      | GitHub Issue |
 |-------------------------------|------------------|-----------|-------------|--------------|
 | Design student dashboard UI   | Brilliant Maloma | 6 hrs     | In Progress | #12          |
-| Setup Django backend          | Nathan Chinoma   | 8 hrs     | Completed   | #5           |
+| Setup Express.js backend      | Nathan Chinoma   | 8 hrs     | Completed   | #5           |
 | Implement chatbot framework   | Nathan Chinoma   | 7 hrs     | Completed   | #7           |
 | Draft test cases (dashboard)  | Bunono Mhlakaza  | 4 hrs     | To Do       | #9           |
 
