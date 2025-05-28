@@ -27,17 +27,18 @@
 | Data security concerns        | Low        | Critical | Implement OAuth2 <br> Regular audits        |
 
 ## Technology Stack
+We followed a MERN stack which consists of an ecosystem using MongoDB, Expressjs, React and Node js
 ### Backend
-- **Python/Django**: Chosen for rapid development and robust ORM capabilities
-- **PostgreSQL**: Selected for ACID compliance in bursary transactions
+- **Expressjs**: Chosen for rapid development and robust ORM capabilities
+- **sql-lite and mongo stack**: Selected for ACID compliance in bursary transactions
 
 ### Frontend
 - **React.js**: Enables reusable components and responsive design
-- **Mapbox GL JS**: Powers campus navigation with real-time positioning
+
 
 ### DevOps
 - **GitHub Actions**: CI/CD pipeline for automated testing
-- **Docker**: Containerization for consistent environments
+
 
 ### AI Components
 - **Dialogflow**: Natural language processing for chatbot
