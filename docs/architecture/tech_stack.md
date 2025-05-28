@@ -3,19 +3,19 @@
 ## Core Components  
 | Category       | Technology       | Version |  
 |----------------|------------------|---------|  
-| **Backend**    | Django (Python)  | 4.2     |  
+| **Backend**    | Express.js       | 4.2     |  
 | **Frontend**   | React.js         | 18.2    |  
-| **Database**   | PostgreSQL       | 15      |  
+| **Database**   | MongoDB          | 15      |  
 | **Hosting**    | AWS EC2 + S3     | -       |  
 | **CI/CD**      | GitHub Actions   | -       |  
 
 ## Justification  
 
-### Backend: Django (Python)  
+### Backend:  Express.js  
  **Why?**  
 - **Batteries-included**: Built-in admin panel, ORM, and auth.  
 - **Security**: CSRF protection, SQL injection safeguards.  
-- **Scalability**: Handles high traffic with async support (Django Channels).  
+- **Scalability**: Handles high traffic with async support (Express.js Channels).  
 
  **Trade-offs**:  
 - Less microservices-friendly than Node.js/Go.  
@@ -29,7 +29,7 @@
  **Trade-offs**:  
 - Steeper learning curve vs. Vue.js.  
 
-### Database: PostgreSQL  
+### Database: MongoDB  
  **Why?**  
 - **ACID Compliance**: Critical for financial/transactional data.  
 - **Scalability**: Vertical scaling suits phased rollouts.  
@@ -41,7 +41,7 @@
 ### Hosting: AWS  
  **Why?**  
 - **Global Reach**: Multi-region deployment.  
-- **Services**: S3 for static files, RDS for managed PostgreSQL.  
+- **Services**: S3 for static files, RDS for managed MongoDB.  
 - **Cost Control**: Pay-as-you-go pricing.  
 
  **Trade-offs**:  
