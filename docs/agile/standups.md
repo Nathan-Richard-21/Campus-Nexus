@@ -39,7 +39,7 @@
 ### Stand-up: 16/04/2025 (Wednesday)
 - **Nathan Chinoma**:
   - Completed: Basic chatbot (Issue #5 closed)
-  - Today: Django server setup
+  - Today: Express.js server setup
   - Blockers: None
 
 ---
