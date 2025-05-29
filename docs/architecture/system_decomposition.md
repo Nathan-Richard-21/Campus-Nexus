@@ -1,18 +1,18 @@
 # System Decomposition  
 ## Modules  
 1. **User Management**  
-2. **Business Listings**  
-3. **Search & Filtering**  
-4. **Messaging Integration (WhatsApp)**  
-5. **Admin Dashboard**  
+2. **Campus Navigation**  
+3. **Food ordering**  
+4. **Messaging Integration (Emailjs)**  
+5. **Campus registration**  
 
 ## Component Responsibilities  
 | Module                  | Key Responsibilities                                                                 |  
 |-------------------------|-------------------------------------------------------------------------------------|  
 | **User Management**     | - Handle user registration, authentication (JWT).<br>- Profile management (edit, delete). |  
-| **Business Listings**   | - CRUD operations for business entries.<br>- Handle reviews/ratings.                 |  
-| **Search & Filtering**  | - Geolocation-based business discovery.<br>- Filter by category, ratings, distance.  |  
+| **Food ordering**   | - Help make ordering easier.<br>- Handles payemnts.                 |  
+| **Campus Navigation****  | - Geolocation-based business discovery.<br>- Filter by category, ratings, distance.  |  
 | **Messaging Integration** | - WhatsApp API integration for business-user communication.<br>- Notifications.      |  
-| **Admin Dashboard**     | - Approve/reject business verifications.<br>- Generate usage reports.                |  
+| **Campus registration**     | - Give information to make it easier for users to register.                |  
 
 
