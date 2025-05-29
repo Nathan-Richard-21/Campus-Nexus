@@ -6,6 +6,7 @@ import PaymentModal from './PaymentModal';
 import OrderSuccessMessage from './OrderSuccessMessage';
 import MenuItemComponent from './MenuItemComponent';
 import Cart from './Cart';
+import emailjs from 'emailjs-com';
 
 const FoodOrdering: React.FC = () => {
   const [loading, setLoading] = useState(true);
@@ -425,9 +426,29 @@ const FoodOrdering: React.FC = () => {
     setIsOrderModalOpen(true);
   };
   
+  const sendOrderEmail = () => {
+    const orderDetails = cart.map(item => `${item.name} x${item.quantity}`).join(', ');
+    const emailParams = {
+      to_email: 'nrchinoz49@gmail.com',
+      order_details: orderDetails,
+      total_price: getTotalPrice(),
+      pickup_time: pickupTime,
+      campus: activeCampus,
+    };
+
+    emailjs.send('service_test', 'template_test', emailParams, 'user_test')
+      .then(() => {
+        console.log('Order email sent successfully');
+      })
+      .catch(error => {
+        console.error('Error sending order email:', error);
+      });
+  };
+  
   const handleOrderConfirm = () => {
     setIsOrderModalOpen(false);
     setIsPaymentModalOpen(true);
+    sendOrderEmail();
   };
   
   const handlePaymentComplete = (paymentMethod: string) => {

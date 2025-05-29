@@ -13,6 +13,7 @@ const Login: React.FC = () => {
     });
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState('');
+    const [successMessage, setSuccessMessage] = useState('');
     const navigate = useNavigate();
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -28,6 +29,7 @@ const Login: React.FC = () => {
         e.preventDefault();
         setIsLoading(true);
         setError('');
+        setSuccessMessage('');
 
         try {
             const response = await fetch('http://localhost:3000/signin', {
@@ -49,7 +51,11 @@ const Login: React.FC = () => {
                     localStorage.setItem('rememberUser', 'true');
                 }
                 console.log('User:', data.user);
-                navigate('/');
+                setSuccessMessage('Login successful! Redirecting...');
+                setTimeout(() => {
+                    setSuccessMessage('');
+                    navigate('/');
+                }, 2000);
             } else {
                 setError(data.error || 'Login failed');
             }
@@ -109,6 +115,17 @@ const Login: React.FC = () => {
                     >
                         <FontAwesomeIcon icon={faExclamationTriangle} />
                         <span>{error}</span>
+                    </motion.div>
+                )}
+
+                {successMessage && (
+                    <motion.div 
+                        className="success-message"
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        transition={{ duration: 0.3 }}
+                    >
+                        <span>{successMessage}</span>
                     </motion.div>
                 )}
 
