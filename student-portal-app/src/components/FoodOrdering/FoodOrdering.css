@@ -598,9 +598,22 @@
   max-width: 550px;
 }
 
+/* Center align modal content */
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
 @keyframes zoomIn {
   from { transform: scale(0.9); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
+}
+
+/* Center align modal header */
+.modal-header {
+  justify-content: center;
 }
 
 .modal-header {
@@ -614,6 +627,12 @@
 .modal-header h2 {
   margin: 0;
   color: #003366;
+}
+
+/* Center align order items */
+.order-item {
+  justify-content: center;
+  text-align: center;
 }
 
 .close-btn {
@@ -636,6 +655,12 @@
 .modal-content h3 {
   color: #004080;
   margin-top: 0;
+}
+
+/* Center align order total */
+.order-total {
+  justify-content: center;
+  text-align: center;
 }
 
 .order-item {

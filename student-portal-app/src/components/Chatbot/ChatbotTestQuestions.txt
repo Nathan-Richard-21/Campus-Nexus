@@ -1,0 +1,17 @@
+Example questions to test the chatbot:
+
+1. How do I apply for NSFAS?
+2. When will my NSFAS allowance be paid?
+3. What documents are needed for a bursary application?
+4. How can I update my banking details?
+5. How do I check my outstanding balance?
+6. Can I apply for a payment plan?
+7. How do I unblock my student portal?
+8. What should I do if I lost my student card?
+9. How do I reset my email password?
+10. Where can I get my academic transcript?
+11. When will exam results be released?
+12. How do I apply for a remark?
+13. What are the graduation requirements?
+14. How do I activate Office 365?
+15. How do I access the university WiFi?
