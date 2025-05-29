@@ -2,7 +2,7 @@
 
 ## Must Have Features
 - **AI Chatbot for Student Inquiries**
-  - Instant responses to admin questions
+  - Instant responses to students questions
   - 24/7 automated support
 - **Bursary Updates and Q&A Assistant**
   - NSFAS deadline alerts
