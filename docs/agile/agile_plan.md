@@ -10,7 +10,7 @@
 | Product Owner    | Thalaga Makwela   | Prioritizes backlog; liaises with stakeholders       |
 | Scrum Master     | Welcome Molefe    | Facilitates ceremonies; removes blockers             |
 | Backend Dev      | Nathan Chinoma    | API development; database integration                |
-| Frontend Dev     | Brilliant Matome  | UI implementation; responsive design                 |
+| Frontend Dev     | Brilliant Matoma  | UI implementation; responsive design                 |
 | QA & Docs        | Bunono Mhlakaza   | Test cases; technical documentation                  |
 
 ## Sprint Schedule
