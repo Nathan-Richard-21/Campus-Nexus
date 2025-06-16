@@ -26,7 +26,7 @@ const buildings = [
 const defaultCenter = { lat: -31.6028, lng: 28.7502 };
 const mapContainerStyle = { width: '100%', height: '520px', borderRadius: '16px' };
 
-const GOOGLE_MAPS_API_KEY = 'AIzaSyBgN9uR-pfUyxc8YFgo9Yw08u4f-1H7GHM'; // Replace with your key
+const GOOGLE_MAPS_API_KEY = 'AIzaSyBgN9...'; // Replace with your key
 
 const CampusNavigation: React.FC = () => {
   const [selected, setSelected] = useState<number | null>(null);
