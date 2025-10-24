@@ -1,5 +1,7 @@
 # Student Portal App
 
+build by infinity cyberetech
+
 ## Overview
 The Student Portal App is designed to streamline various student services and improve communication between students and administration. The application features an AI-powered chatbot, bursary information access, campus navigation, online food ordering, special case handling, module selection, and course registration functionalities.
 
