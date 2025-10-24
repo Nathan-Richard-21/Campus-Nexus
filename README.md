@@ -6,6 +6,8 @@ Code files are in the master branch.
 ![Status](https://img.shields.io/badge/Status-Active-success)
 ![Version](https://img.shields.io/badge/Version-1.0.0-blue)
 
+Please see the code in the masters branch
+
 ## 🎓 About Campus Nexus
 
 **Campus Nexus** is a comprehensive campus management solution designed to streamline administrative processes and enhance the student experience. Developed by **Infinity Cybertech**, this platform addresses common challenges faced by students and administrators in campus environments.
